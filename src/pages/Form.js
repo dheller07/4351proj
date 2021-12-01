@@ -1,13 +1,29 @@
-import React from 'react'
-import FormSignUp from './FormSignUp'
+import React, { useState } from 'react';
+
+import FormSignup from '../pages/FormSignUp';
+import FormSuccess from '../pages/FormSuccess';
 
 const Form = () => {
-    return (
-        <div>
-            <h1> hello </h1>
-          <FormSignUp  />
-        </div>
-    )
-}
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-export default Form
+  function submitForm() {
+    setIsSubmitted(true);
+  }
+  return (
+    <>
+      <div className='form-container'>
+        <span className='close-btn'>×</span>
+        <div className='form-content-left'>
+          
+        </div>
+        {!isSubmitted ? (
+          <FormSignup submitForm={submitForm} />
+        ) : (
+          <FormSuccess />
+        )}
+      </div>
+    </>
+  );
+};
+
+export default Form;
