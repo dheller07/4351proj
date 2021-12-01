@@ -1,10 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const Table = sequelize.define("table", {
         tableNumber: {
-            type: Sequelize.INT
+            type: Sequelize.INTEGER
         },
         capacityLimit: {
-            type: Sequelize.INT
+            type: Sequelize.INTEGER
         }
     });
 

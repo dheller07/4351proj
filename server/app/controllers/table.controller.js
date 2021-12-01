@@ -4,7 +4,30 @@ const Op = db.Sequelize.Op;
 
 // Add new table
 exports.create = (req, res) => {
+    // Validate server request
+    if (!req.body.tableNumber) {
+        res.status(400).send({
+            message: "ERROR: No table number!"
+        });
+        return;
+    }
 
+    // Create table
+    const table = {
+        tableNumber: req.body.tableNumber,
+        capacityLimit: req.body.capacityLimit
+    };
+
+    // Add to database
+    Table.create(table)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || "Unknown error occurred creating table."
+            });
+        });
 };
 
 // Update existing table

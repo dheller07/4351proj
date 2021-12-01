@@ -18,6 +18,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.table = require(".table.model.js")(sequelize, Sequelize);
+db.tables = require("./table.model.js")(sequelize, Sequelize);
 
 module.exports = db;

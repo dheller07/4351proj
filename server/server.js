@@ -20,6 +20,9 @@ app.get("/", (req, res) => {
    res.json({message: "Welcome to Application"})
 });
 
+require("./app/routes/table.routes.js")(app);
+
+// listen for server requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);

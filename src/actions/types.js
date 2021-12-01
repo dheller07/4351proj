@@ -1,0 +1,4 @@
+export const CREATE_TABLE = "CREATE_TABLE";
+export const RETRIEVE_TABLES = "RETRIEVE_TABLES";
+export const UPDATE_TABLE = "UPDATE_TABLE";
+export const DELETE_TABLE = "DELETE_TABLE";
