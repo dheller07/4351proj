@@ -15,6 +15,9 @@ function Home() {
         <Link to ="/reservation">
             <button> Reservation </button>
         </Link>
+        <Link to="form">
+            <button> Register </button>
+        </Link>
       </div>
     </div>
   );
